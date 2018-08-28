@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JavaScript Calculator</title>
+  <meta name="description" content="A simple javascript calculator.">
+  <meta name="author" content="Michael Symmes">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="container" id="calculator">
+    <div id="calculator-display">
+      <div id="display-main-text">
+        0
+      </div>
+      <div id="display-sub-text">
+        0
+      </div>
+    </div>
+    <div id="calculator-keys">
+      <div id="key-column-main">
+        <div class="key-row">
+          <button class="clear-button">AC</button>
+          <button class="clear-button">CE</button>
+          <button>/</button>
+        </div>
+        <div class="key-row">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+        </div>
+        <div class="key-row">
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+        </div>
+        <div class="key-row">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+        </div>
+        <div class="key-row">
+          <button id="zero-button">0</button>
+          <button>.</button>
+        </div>
+      </div>
+      <div id="key-column-mods">
+          <button>*</button>
+          <button>-</button>
+          <button>+</button>
+          <button id="equals-button">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="calculator.js"></script>
+</body>
