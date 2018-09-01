@@ -1,4 +1,4 @@
-import { model } from '../calculator';
+import model from '../model';
 import inputNumber from '../inputNumber';
 
 describe('inputNumber', () => {

@@ -1,4 +1,4 @@
-import { model } from '../calculator';
+import model from '../model';
 import inputAction from '../inputAction';
 import inputNumber from '../inputNumber';
 

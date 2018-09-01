@@ -2,15 +2,18 @@
   "name": "calculator",
   "version": "1.0.0",
   "description": "A simple calculator written in vanilla js.",
-  "main": "app/index.html",
+  "private": true,
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
   "author": "Michael Symmes",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-core": "^7.0.0-0",
@@ -20,6 +23,9 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "jest": "^23.5.0",
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.12.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
   }
 }
