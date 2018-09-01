@@ -54,19 +54,6 @@ describe('inputAction', () => {
       const action = inputAction('+', startingModel);
       expect(action.buffer).toBe('0');
     });
-    describe('action is not =, AC, CE', () => {
-      test('it calls the previously set operation on registerA and registerB, and sets the result to registerA', () => {
-        const startingModel = {
-          buffer: '55',
-          registerA: 5,
-          registerB: 0,
-          operation: '+',
-          actions: ['5', '+'],
-        };
-        const action = inputAction('*', startingModel);
-        expect(action.registerA).toBe(60);
-      });
-    });
     test('it adds the buffer and the action to list of actions', () => {
       const startingModel = {
         buffer: '55',
@@ -97,6 +84,54 @@ describe('inputAction', () => {
       const n4 = inputAction('*', n3);
       expect(n4.registerA).toBe(10);
       expect(n4.actions).toEqual(['5', '+', '55', '+', '10', '-', '60', '*']);
+    });
+    describe('previous action was =', () => {
+      test('it does not add buffer to actions list', () => {
+        const startingModel = {
+          buffer: '55',
+          registerA: 5,
+          registerB: 0,
+          operation: '=',
+          actions: ['5', '+', '5', '=', '10'],
+        };
+        const n = inputAction('+', startingModel);
+        expect(n.actions).toEqual(['5', '+', '5', '=', '10', '+']);
+      });
+      test('it sets the new operation', () => {
+        const startingModel = {
+          buffer: '55',
+          registerA: 5,
+          registerB: 0,
+          operation: '=',
+          actions: ['5', '+', '5', '=', '10'],
+        };
+        const n = inputAction('+', startingModel);
+        expect(n.operation).toEqual('+');
+      });
+      test('it resets the buffer', () => {
+        const startingModel = {
+          buffer: '55',
+          registerA: 5,
+          registerB: 0,
+          operation: '=',
+          actions: ['5', '+', '5', '=', '10'],
+        };
+        const n = inputAction('+', startingModel);
+        expect(n.buffer).toEqual('0');
+      });
+    });
+    describe('action is not =, AC, CE', () => {
+      test('it calls the previously set operation on registerA and registerB, and sets the result to registerA', () => {
+        const startingModel = {
+          buffer: '55',
+          registerA: 5,
+          registerB: 0,
+          operation: '+',
+          actions: ['5', '+'],
+        };
+        const action = inputAction('*', startingModel);
+        expect(action.registerA).toBe(60);
+      });
     });
   });
 });

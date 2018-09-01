@@ -50,6 +50,12 @@ const inputAction = (action, m) => {
     calcModel.registerB = parseInt(calcModel.buffer, 10);
 
     // add buffer and action to actions list
+    if (calcModel.operation === '=') {
+      calcModel.actions.push(action);
+      calcModel.operation = action;
+      calcModel.buffer = '0';
+      return calcModel;
+    }
     calcModel.actions.push(calcModel.buffer, action);
 
     // check for divide by 0 error
