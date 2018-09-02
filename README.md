@@ -1,14 +1,13 @@
 ## Calculator
 A simple calculator written in vanilla ES6 javascript.
 
-This project was originally thrown together on codepen, but in an effort to improve it, I pulled the code into a local npm package and completely re-wrote the javascript using real deal, test first, TDD with jest as my test library. It was awesome. Then I added babel and webpack in order to bundle it up and show it off. 
+This project was originally thrown together on codepen, but in an effort to improve it, I pulled the code into a local npm package and completely re-wrote the javascript using real deal, test first, TDD with jest. It was awesome. Then I added babel and webpack in order to bundle it up and show it off. Still needs some work, but basic functionality is there.
 
 ## TODO:
 
-Could attempt to make it mobile first and responsive.
-It probably needs some more tests? For edge cases and the like.
-So far though, no code (other than the little bit of display code in index.js) was 
-written without first having a failing test written.
+[x] Mobile friendly
+[ ] Floating point support.
+[ ] It probably needs some more tests? For edge cases and the like.
 
 ## Usage.
 
